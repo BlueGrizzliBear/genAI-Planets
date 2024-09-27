@@ -24,12 +24,12 @@ def format_and_save_img(save_path, source_img_path, img_dim):
         img_resized.save(save_path, icc_profile=img.info.get('icc_profile'))  # Save the resized image back to the new resized directory
 
 
-def format_data(dataset_folder, dataset_name, img_dim):
+def format_data(src_dataset_folder, dst_dataset_folder, dataset_name, img_dim):
     # Create a dataframe to store the pairs of text descriptions and image paths
     data = {'text_description': [], 'image_path': []}
-    dataset_path = os.path.join(dataset_folder, dataset_name)
+    dataset_path = os.path.join(src_dataset_folder, dataset_name)
 
-    resized_directory = os.path.join(dataset_folder, f"{dataset_name}_{img_dim}")
+    resized_directory = os.path.join(dst_dataset_folder, f"{dataset_name}_{img_dim}")
     if not os.path.exists(resized_directory):
         os.makedirs(resized_directory)
 

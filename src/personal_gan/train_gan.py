@@ -44,8 +44,9 @@ def main():
 	# Format the data -----------------------------------------------------------
 	# Load the training and testing datasets
 	print('Start formatting data')
-	dataset_folder = './dataset/'
-	train_df = format_data(dataset_folder, 'planets', img_dim)
+	src_dataset_folder = './dataset/'
+	dst_dataset_folder = './src/personal_gan/dedicated_dataset/'
+	train_df = format_data(src_dataset_folder, dst_dataset_folder, 'planets', img_dim)
 	print('Finished formatting data')
 
   # Build generator | discriminator | gan -------------------------------------
